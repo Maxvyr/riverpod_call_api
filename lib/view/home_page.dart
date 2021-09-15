@@ -11,7 +11,6 @@ class HomePageView extends HookConsumerWidget {
     final memeProvider = ref.watch(callMemeApiProvider);
     const imageNO =
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png";
-    debugPrint("call API by Provider");
 
     Meme loadingMeme = Meme(0, imageNO, "Loading....", "");
 
@@ -62,9 +61,7 @@ class HomePageView extends HookConsumerWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.skip_next),
         onPressed: () async {
-          debugPrint("CLIKC");
-          await ref.refresh(callMemeApiProvider);
-          debugPrint("Refresh");
+          ref.refresh(callMemeApiProvider);
         },
       ),
     );
