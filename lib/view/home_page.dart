@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_call_api/state/state_manager.dart';
+import 'package:riverpod_call_api/view/view_image_page.dart';
 
 class HomePageView extends HookConsumerWidget {
   const HomePageView({Key? key}) : super(key: key);
@@ -19,18 +20,26 @@ class HomePageView extends HookConsumerWidget {
         ),
         error: (e, stack) => Center(
           child: Text("Error : $e"),
-        ), 
+        ),
         data: (photos) {
           return ListView.builder(
             itemCount: photos.length,
             itemBuilder: (BuildContext context, int index) {
               final photo = photos[index];
 
-              return ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(photo.thumbnailUrl),
+              return InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ViewImage(photo: photo),
+                  ),
                 ),
-                title: Text("${photo.id}. ${photo.title}"),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(photo.thumbnailUrl),
+                  ),
+                  title: Text("${photo.id}. ${photo.title}"),
+                ),
               );
             },
           );
