@@ -11,8 +11,11 @@ List<Photo> parsePhotos(String resBody) {
 }
 
 Future<List<Photo>> fetchPhotos() async {
-  final res =
-      await http.get(Uri.parse("https://jsonplaceholder.typicode.com/photos"));
+  final res = await http.get(
+    Uri.parse(
+      "https://jsonplaceholder.typicode.com/photos",
+    ),
+  );
   if (res.statusCode == 200) {
     return compute(parsePhotos, res.body);
   } else {

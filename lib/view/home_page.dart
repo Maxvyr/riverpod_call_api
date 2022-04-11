@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_call_api/state/state_manager.dart';
 import 'package:riverpod_call_api/view/view_image_page.dart';
 
-class HomePageView extends HookConsumerWidget {
+class HomePageView extends ConsumerWidget {
   const HomePageView({Key? key}) : super(key: key);
 
   @override
