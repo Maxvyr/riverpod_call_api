@@ -14,7 +14,7 @@ A new Flutter project for showing how to use [riverpod](https://riverpod.dev/) w
 
 ## Crypto Tips
 
-![https://i.imgur.com/wuW30D5.png](https://i.imgur.com/wuW30D5.png)
+![https://raw.githubusercontent.com/Maxvyr/Maxvyr/main/img/tips/github-tips-crypto.png](https://raw.githubusercontent.com/Maxvyr/Maxvyr/main/img/tips/github-tips-crypto.png)
 
 ## Pull Request
 
